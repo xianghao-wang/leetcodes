@@ -1,11 +1,11 @@
 import java.util.Stack;
 
-class MyQueue_1 {
+class MyQueue {
     Stack<Integer> stack;
     Stack<Integer> exchange;
 
     /** Initialize your data structure here. */
-    public MyQueue_1() {
+    public MyQueue() {
         stack = new Stack<>();
         exchange = new Stack<>();
     }

@@ -1,12 +1,12 @@
 import java.util.Stack;
 
-class MyQueue_2 {
+class MyQueue {
     Stack<Integer> s1;
     Stack<Integer> s2;
     int front; // 队首元素
 
     /** Initialize your data structure here. */
-    public MyQueue_2() {
+    public MyQueue() {
         s1 = new Stack<>();
         s2 = new Stack<>();
     }

@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
-class Solution_2 {
+class Solution {
     
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
         int[] ans = new int[nums1.length];
@@ -17,20 +17,14 @@ class Solution_2 {
         }
 
         for (int i = 0; i < nums2.length; i ++) {
-            if (s.empty() || nums2[i] <= s.peek()) {
-                s.push(nums2[i]);
-            } else {
-                while (!s.empty()) {
-                    if (nums2[i] > s.peek()) {
-                        int top = s.pop();
-                        Integer index = indices.get(top);
-                        if (index != null) {
-                            ans[index] = nums2[i];
-                        }
-                    }
+            while (!s.empty() && nums2[i] > s.peek()) {
+                int top = s.pop();
+                Integer index = indices.get(top);
+                if (index != null) {
+                    ans[index] = nums2[i];
                 }
-                s.push(nums2[i]);
             }
+            s.push(nums2[i]);
         }
 
         for (int i = 0; i < ans.length; i ++) {
