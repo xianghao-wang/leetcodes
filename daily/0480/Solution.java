@@ -24,14 +24,13 @@ class Solution {
         }
 
         public void remove(int val) {
-            if (val <= small.peek()) {
-                small.remove(val);
-            } else {
-                large.remove(val);
-            }
+            System.out.println(small.size() + " " + large.size());
 
-            small.remove(val);
-            large.remove(val);
+            if (val >= small.peek()) {
+                large.remove(val);
+            } else {
+                small.remove(val);
+            }
 
             size --;
 
